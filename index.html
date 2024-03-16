@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SimulBench</title>
+    <title>SimulBench</title>
     <style>
         .hidden {
             display: none;
         }
 
     </style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="SimulBench: Evaluating LLMs with Diverse Simulation Tasks">
-  <meta name="keywords" content="SimulBench, Large Language Model, artificial intelligence, AI, AGI, artificial general intelligence">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> SimulBench: Evaluating LLMs with Diverse Simulation Tasks</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="SimulBench: Evaluating LLMs with Diverse Simulation Tasks">
+    <meta name="keywords"
+          content="SimulBench, Large Language Model, artificial intelligence, AI, AGI, artificial general intelligence">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> SimulBench: Evaluating LLMs with Diverse Simulation Tasks</title>
 
-<!--  <link rel="icon" href="./static/images/icon.png">-->
+    <!--  <link rel="icon" href="./static/images/icon.png">-->
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="./static/css/leaderboard.css">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/leaderboard.css">
 
-  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+    <script type="text/javascript" src="static/js/sort-table.js" defer></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-  <script src="./static/js/question_card.js"></script>
-  <script src="./data/results/data_setting.js" defer></script>
-  <script src="./data/results/model_scores.js" defer></script>
-  <script src="./visualizer/data/data_public.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/question_card.js"></script>
+    <script src="./data/results/data_setting.js" defer></script>
+    <script src="./data/results/model_scores.js" defer></script>
+    <script src="./visualizer/data/data_public.js" defer></script>
 </head>
 <body>
 
 
 <section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title is-bold">
-<!--            <img src="static/images/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/> -->
-            <span class="opencodeinterpreter" style="vertical-align: middle">SimulBench</span>
-            </h1>
-          <h2 class="subtitle is-3 publication-subtitle">
-            Evaluating LLMs with Diverse Simulation Tasks
-          </h2>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Qi Jia<sup style="color:#6fbf73;">1</sup>,
-            <span class="author-block">Xiang Yue<sup style="color:#ffac33;">1</sup>,<sup style="color:#ed4b82;">2</sup>,</span>
-            <span class="author-block">Tianyu Zheng<sup style="color:#ed4b82;">1</sup>,</span>
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title is-bold">
+                        <!--            <img src="static/images/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/> -->
+                        <span class="opencodeinterpreter" style="vertical-align: middle">SimulBench</span>
+                    </h1>
+                    <h2 class="subtitle is-3 publication-subtitle">
+                        Evaluating LLMs with Diverse Simulation Tasks
+                    </h2>
+                    <div class="is-size-5 publication-authors">
+            <span class="author-block">Qi Jia<sup style="color:#6fbf73;">4</sup>,
+            <span class="author-block">Xiang Yue<sup style="color:#ffac33;">2</sup>,<sup style="color:#6fbf73;">4</sup>,</span>
+            <span class="author-block">Tianyu Zheng<sup style="color:#6fbf73;">4</sup>,</span>
             <span class="author-block">Jie Huang<sup style="color:#007bff;">3</sup>,</span>
             <span class="author-block">
-              <a href="https://yuchenlin.xyz/" style="text-decoration: none; color: inherit;">Bill Yuchen Lin<sup style="color:#ed4b82;">4<sup></a>
+              <a href="https://yuchenlin.xyz/" style="text-decoration: none; color: inherit;">Bill Yuchen Lin<sup
+                      style="color:#ed4b82;">1<sup></a>
             </span>
-          
-          </div>
-          
-          <br>
-          
-          <div class="is-size-5 publication-authors">
-<!--            <span class="author-block"><sup style="color:#6fbf73;">1</sup>Shanghai Jiao Tong University,</span>-->
-            <span class="author-block"><sup style="color:#ffac33;">1</sup>Multimodal Art Projection Research Community,</span>
-            <span class="author-block"><sup style="color:#ed4b82;">2</sup>Ohio State University,</span>
-            <span class="author-block"><sup style="color:#007bff;">3</sup>University of Illinois at Urbana-Champaign,</span>
-            <span class="author-block"><sup style="color:#ff0000;">4</sup>Allen Institute for AI</span>
-          </div>
 
-          <br>
-          <div class="is-size-5 publication-authors">
-<!--            <span class="author-block">*Core Contributors</span><br>-->
-            <span class="author-block">†Corresponding to:</span>
-            <span class="author-block"><a href="mailto:yuchenl@allenai.org"> yuchenl@allenai.org</a>,</span>
-            <span class="author-block"><a href="mailto:qijia0217@gmail.com">qijia0217@gmail.com</a></span>
-<!--            <span class="author-block"><a href="mailto:ge.zhang@uwaterloo.ca">ge.zhang@uwaterloo.ca</a>,</span>-->
-          </div>
-          
+                    </div>
 
-          <!-- <div class="column has-text-centered" style="overflow-x: auto;"> -->
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
+                    <br>
+
+                    <div class="is-size-5 publication-authors">
+                        <!--            <span class="author-block"><sup style="color:#6fbf73;">1</sup>Shanghai Jiao Tong University,</span>-->
+                        <span class="author-block"><sup style="color:#ed4b82;">1</sup>Allen Institute for AI,</span>
+                        <span class="author-block"><sup style="color:#ffac33;">2</sup>Ohio State University,</span>
+                        <span class="author-block"><sup style="color:#007bff;">3</sup>University of Illinois at Urbana-Champaign,</span>
+                        <span class="author-block"><sup style="color:#6fbf73;">4</sup>Multimodal Art Projection Research Community,</span>
+
+                    </div>
+
+                    <br>
+                    <div class="is-size-5 publication-authors">
+                        <!--            <span class="author-block">*Core Contributors</span><br>-->
+                        <span class="author-block">†Corresponding to:</span>
+                        <span class="author-block"><a href="mailto:yuchenl@allenai.org"> yuchenl@allenai.org</a>,</span>
+                        <span class="author-block"><a href="mailto:qijia0217@gmail.com">qijia0217@gmail.com</a></span>
+                        <!--            <span class="author-block"><a href="mailto:ge.zhang@uwaterloo.ca">ge.zhang@uwaterloo.ca</a>,</span>-->
+                    </div>
+
+
+                    <!-- <div class="column has-text-centered" style="overflow-x: auto;"> -->
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
                 <a href="https://arxiv.org/abs/xxx"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -100,16 +103,16 @@
                   <span>arXiv</span>
                 </a>
               </span>
-<!--              <span class="link-block">-->
-<!--                <a href="https://huggingface.co/papers/2402.14658"-->
-<!--                   class="external-link button is-normal is-rounded is-dark">-->
-<!--                  <span class="icon">-->
-<!--                    <p style="font-size:18px">🤗</p>-->
-<!--                  </span>-->
-<!--                  <span>HF Paper</span>-->
-<!--                </a>-->
-<!--              </span>-->
-              <span class="link-block">
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="https://huggingface.co/papers/2402.14658"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon">-->
+                            <!--                    <p style="font-size:18px">🤗</p>-->
+                            <!--                  </span>-->
+                            <!--                  <span>HF Paper</span>-->
+                            <!--                </a>-->
+                            <!--              </span>-->
+                            <span class="link-block">
                 <a href="https://huggingface.co/datasets/SimulBench/SimulBench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -118,7 +121,7 @@
                   <span>Datasets</span>
                 </a>
               </span>
-              <span class="link-block">
+                            <span class="link-block">
                 <a href="https://huggingface.co/spaces/SimulBench/SimulBench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -129,7 +132,7 @@
                   <span>Data Explore</span>
                 </a>
               </span>
-              <span class="link-block">
+                            <span class="link-block">
                 <a href="https://github.com/SimulBench/SimulBench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -138,366 +141,434 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-<!--              <span class="link-block">-->
-<!--                <a href="https://huggingface.co/spaces/m-a-p/OpenCodeInterpreter_demo"-->
-<!--                   class="external-link button is-normal is-rounded is-dark">-->
-<!--                  <span class="icon">-->
-<!--                      &lt;!&ndash; <i class="far fa-images"></i> &ndash;&gt;-->
-<!--                      <p style="font-size:18px">🚀</p>-->
-<!--                      &lt;!&ndash; 🔗 &ndash;&gt;-->
-<!--                  </span>-->
-<!--                  <span>Demo</span>-->
-<!--                </a>-->
-<!--              </span>-->
-              <!-- Leaderboard Link. -->
-<!--              <span class="link-block">-->
-<!--                <a href="#mainresults"-->
-<!--                   class="external-link button is-normal is-rounded is-dark">-->
-<!--                  <span class="icon has-text-white">-->
-<!--                    <i class="fa-solid fa-trophy"></i>-->
-<!--                      &lt;!&ndash; <p style="font-size:18px">🏆</p> &ndash;&gt;-->
-<!--                  </span>-->
-<!--                  <span>Main Results</span>-->
-<!--                </a>-->
-<!--              </span>-->
+                            <!-- Dataset Link. -->
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="https://huggingface.co/spaces/m-a-p/OpenCodeInterpreter_demo"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon">-->
+                            <!--                      &lt;!&ndash; <i class="far fa-images"></i> &ndash;&gt;-->
+                            <!--                      <p style="font-size:18px">🚀</p>-->
+                            <!--                      &lt;!&ndash; 🔗 &ndash;&gt;-->
+                            <!--                  </span>-->
+                            <!--                  <span>Demo</span>-->
+                            <!--                </a>-->
+                            <!--              </span>-->
+                            <!-- Leaderboard Link. -->
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="#mainresults"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon has-text-white">-->
+                            <!--                    <i class="fa-solid fa-trophy"></i>-->
+                            <!--                      &lt;!&ndash; <p style="font-size:18px">🏆</p> &ndash;&gt;-->
+                            <!--                  </span>-->
+                            <!--                  <span>Main Results</span>-->
+                            <!--                </a>-->
+                            <!--              </span>-->
 
-              
-              <!-- Twitter Link. -->
-<!--              <span class="link-block">-->
-<!--                <a href="https://twitter.com/GeZhang86038849/status/1760848526592901426"-->
-<!--                   class="external-link button is-normal is-rounded is-dark">-->
-<!--                  <span class="icon has-text-white">-->
-<!--                    <i class="fa-brands fa-x-twitter"></i>-->
-<!--                      &lt;!&ndash; <p style="font-size:18px">🌐</p> &ndash;&gt;-->
-<!--                  </span>-->
-<!--                  <span>Twitter</span>-->
-<!--                </a>-->
-<!--              </span>-->
-              <!-- EvalAI Link. -->
-<!--              <span class="link-block">-->
-<!--                <a href="#example"-->
-<!--                   class="external-link button is-normal is-rounded is-dark">-->
-<!--                  <span class="icon has-text-white">-->
-<!--                    <i class="fa-solid fa-book"></i>-->
-<!--                  </span>-->
-<!--                  <span>Example</span>-->
-<!--                </a>-->
-<!--              </span>-->
+
+                            <!-- Twitter Link. -->
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="https://twitter.com/GeZhang86038849/status/1760848526592901426"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon has-text-white">-->
+                            <!--                    <i class="fa-brands fa-x-twitter"></i>-->
+                            <!--                      &lt;!&ndash; <p style="font-size:18px">🌐</p> &ndash;&gt;-->
+                            <!--                  </span>-->
+                            <!--                  <span>Twitter</span>-->
+                            <!--                </a>-->
+                            <!--              </span>-->
+                            <!-- EvalAI Link. -->
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="#example"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon has-text-white">-->
+                            <!--                    <i class="fa-solid fa-book"></i>-->
+                            <!--                  </span>-->
+                            <!--                  <span>Example</span>-->
+                            <!--                </a>-->
+                            <!--              </span>-->
+                        </div>
+
+                    </div>
+                </div>
             </div>
-
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 <style>
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-  }
-  </style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+</style>
 <section class="hero teaser">
-  <div class="container is-max-desktop">
+    <div class="container is-max-desktop">
         <div class="content has-text-centered">
-          <img src="static/figures/examples.png" alt="geometric reasoning" width="80%"/>
-          <p>Examples of LLMs' performance on simulation tasks from SimulBench.</p>
+            <img src="static/figures/examples.png" alt="geometric reasoning" width="100%"/>
+            <p>Examples of LLMs' performance on simulation tasks from SimulBench.</p>
         </div>
-      <!-- </div> -->
+        <!-- </div> -->
     </div>
-  </div>
+    </div>
 </section>
 
 <section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-<!--        <h2 class="title is-3">🔔News</h2>-->
-<!--        <div class="content has-text-justified">-->
-<!--          <p>-->
-<!--            <b>💡[2024-03-01]: We have open-sourced OpenCodeInterpreter-SC2 series Model (based on StarCoder2 base) and OpenCodeInterpreter-GM-7b Model with gemma-7b Base!</b>-->
-<!--          </p>-->
-<!--          <p>-->
-<!--            <b>🛠️[2024-02-29]: Our official online demo is deployed on HuggingFace Spaces! Take a look at <a href="https://huggingface.co/spaces/m-a-p/OpenCodeInterpreter_demo">Demo Page</a>!</b>-->
-<!--          </p>-->
-<!--          <p>-->
-<!--            <b>🛠️[2024-02-28]: We have open-sourced the <a href="https://github.com/OpenCodeInterpreter/OpenCodeInterpreter/tree/main/demo">Demo Local Deployment Code</a> with a Setup Guide.</b>-->
-<!--          </p>-->
-<!--          <p>-->
-<!--            <b>✨[2024-02-26]: We have open-sourced the <a href="https://huggingface.co/m-a-p/OpenCodeInterpreter-DS-1.3B">OpenCodeInterpreter-DS-1.3b</a> Model.</b>-->
-<!--          </p>-->
-<!--          <p>-->
-<!--            <b>📘[2024-02-26]: We have open-sourced the <a href="https://huggingface.co/datasets/m-a-p/CodeFeedback-Filtered-Instruction">CodeFeedback-Filtered-Instruction</a> Dataset.</b>-->
-<!--          </p>-->
-<!--          <p>-->
-<!--            <b>🚀[2024-02-23]: We have open-sourced the datasets used in our project named <a href="https://huggingface.co/datasets/m-a-p/Code-Feedback">Code-Feedback</a>.</b>-->
-<!--          </p>-->
-<!--          <p>-->
-<!--            <b>🔥[2024-02-19]: We have open-sourced all models  in the <a href="https://huggingface.co/collections/m-a-p/opencodeinterpreter-65d312f6f88da990a64da456">OpenCodeInterpreter series</a> ! We welcome everyone to try out our models and look forward to your participation! 😆</b>-->
-<!--          </p>-->
-<!--      </div>      -->
-        <h2 class="title is-3">Introduction</h2>
-        <div class="content has-text-justified">
-          <p>
-            We introduce SimulBench, a benchmark designed to evaluate large language models (LLMs) across a diverse collection of simulation scenarios, such as acting as a Linux terminal or playing text games with users. While these simulation tasks serve as effective measures of an LLM's general intelligence, they are seldom incorporated into existing benchmarks. A major challenge is to develop a shared evaluation environment for testing different LLMs in multi-turn interactions between users and AI. To tackle this issue, we suggest using a fixed LLM as a user agent to engage with multiple target LLMs under evaluation. To facilitate automatic assessment on SimulBench, GPT-4 is employed as the evaluator, tasked with reviewing the quality of the multi-turn dialogues between the user agent and the target LLMs. Our comprehensive experiments indicate that these simulation tasks continue to pose a significant challenge for even the most advanced open LLMs. For example, GPT-4-turbo outperforms Llama-2-70b-chat by a margin of 37.95%.          </p>
+    <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <!--        <h2 class="title is-3">🔔News</h2>-->
+                <!--        <div class="content has-text-justified">-->
+                <!--          <p>-->
+                <!--            <b>💡[2024-03-01]: We have open-sourced OpenCodeInterpreter-SC2 series Model (based on StarCoder2 base) and OpenCodeInterpreter-GM-7b Model with gemma-7b Base!</b>-->
+                <!--          </p>-->
+                <!--          <p>-->
+                <!--            <b>🛠️[2024-02-29]: Our official online demo is deployed on HuggingFace Spaces! Take a look at <a href="https://huggingface.co/spaces/m-a-p/OpenCodeInterpreter_demo">Demo Page</a>!</b>-->
+                <!--          </p>-->
+                <!--          <p>-->
+                <!--            <b>🛠️[2024-02-28]: We have open-sourced the <a href="https://github.com/OpenCodeInterpreter/OpenCodeInterpreter/tree/main/demo">Demo Local Deployment Code</a> with a Setup Guide.</b>-->
+                <!--          </p>-->
+                <!--          <p>-->
+                <!--            <b>✨[2024-02-26]: We have open-sourced the <a href="https://huggingface.co/m-a-p/OpenCodeInterpreter-DS-1.3B">OpenCodeInterpreter-DS-1.3b</a> Model.</b>-->
+                <!--          </p>-->
+                <!--          <p>-->
+                <!--            <b>📘[2024-02-26]: We have open-sourced the <a href="https://huggingface.co/datasets/m-a-p/CodeFeedback-Filtered-Instruction">CodeFeedback-Filtered-Instruction</a> Dataset.</b>-->
+                <!--          </p>-->
+                <!--          <p>-->
+                <!--            <b>🚀[2024-02-23]: We have open-sourced the datasets used in our project named <a href="https://huggingface.co/datasets/m-a-p/Code-Feedback">Code-Feedback</a>.</b>-->
+                <!--          </p>-->
+                <!--          <p>-->
+                <!--            <b>🔥[2024-02-19]: We have open-sourced all models  in the <a href="https://huggingface.co/collections/m-a-p/opencodeinterpreter-65d312f6f88da990a64da456">OpenCodeInterpreter series</a> ! We welcome everyone to try out our models and look forward to your participation! 😆</b>-->
+                <!--          </p>-->
+                <!--      </div>      -->
+                <h2 class="title is-3">Introduction</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We introduce SimulBench, a benchmark designed to evaluate large language models (LLMs) across a
+                        diverse collection of simulation scenarios, such as acting as a Linux terminal or playing text
+                        games with users. While these simulation tasks serve as effective measures of an LLM's general
+                        intelligence, they are seldom incorporated into existing benchmarks. A major challenge is to
+                        develop a shared evaluation environment for testing different LLMs in multi-turn interactions
+                        between users and AI. To tackle this issue, we suggest using a fixed LLM as a user agent to
+                        engage with multiple target LLMs under evaluation. To facilitate automatic assessment on
+                        SimulBench, GPT-4 is employed as the evaluator, tasked with reviewing the quality of the
+                        multi-turn dialogues between the user agent and the target LLMs. Our comprehensive experiments
+                        indicate that these simulation tasks continue to pose a significant challenge for even the most
+                        advanced open LLMs. For example, GPT-4-turbo outperforms Llama-2-70b-chat by a margin of
+                        37.95%. </p>
+                </div>
+            </div>
         </div>
-      </div>
+        <!--/ Abstract. -->
     </div>
-    <!--/ Abstract. -->
-</div>
 </section>
 
 <!-- DATASET SECTION-->
 <section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-  <h1 class="title is-1 mmmu">
-<!--    <img src="static/images/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>-->
-    <span class="mmmu" style="vertical-align: middle">SimulBench</span>
-  </h1>
-  </div>
+    <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu">
+            <!--    <img src="static/images/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>-->
+            <span class="mmmu" style="vertical-align: middle">SimulBench</span>
+        </h1>
+    </div>
 </section>
 
-            
-<section class="section"
-  <div class="container">
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Motivation</h2>
-        <div class="content has-text-justified">
-          <p>
-          The ability of large language models (LLMs) to simulate complex tasks is pivotal in driving the evolution of AI towards achieving general intelligence. These models exhibit remarkable versatility by adeptly assuming a wide range of roles—from acting as a Linux terminal to serving as an investment manager—highlighting their adaptability across various domains. Such flexibility underscores their potential for broad implementation. Consequently, the development of a benchmark dataset for simulation tasks is imperative in nurturing LLMs' progression towards becoming true generalists.          </p>
 
-          <p>
-          Nonetheless, existing benchmarks do not fully evaluate this potential. Current evaluations mainly focus on single-turn, static interactions between users and LLMs. While MT-bench attempts to consider multi-turn interactions with 80 examples, its reliance on predefined second queries fails to effectively examine the dynamic responses of different LLMs when engaging with users in complex, long-horizon simulation tasks.
-          </p>
-          <p>
-          In addition, these benchmarks primarily concentrate on tasks related to general information retrieval and creative writing, with less emphasis on complex simulation abilities. The existing role-playing benchmarks tend to focus on replicating the language styles of famous characters, an aspect that barely begins to explore the full range of simulation capabilities. This highlights the need for more comprehensive benchmarks that can thoroughly assess the wide-ranging simulation potential of LLMs.
-          </p>
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <!-- <div class="column is-full-width has-text-centered"> -->
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Motivation</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        The ability of large language models (LLMs) to simulate complex tasks is pivotal in driving the
+                        evolution of AI towards achieving general intelligence. These models exhibit remarkable
+                        versatility by adeptly assuming a wide range of roles—from acting as a Linux terminal to serving
+                        as an investment manager—highlighting their adaptability across various domains. Such
+                        flexibility underscores their potential for broad implementation. Consequently, the development
+                        of a benchmark dataset for simulation tasks is imperative in nurturing LLMs' progression towards
+                        becoming true generalists. </p>
+
+                    <p>
+                        Nonetheless, existing benchmarks do not fully evaluate this potential. Current evaluations
+                        mainly focus on single-turn, static interactions between users and LLMs. While MT-bench attempts
+                        to consider multi-turn interactions with 80 examples, its reliance on predefined second queries
+                        fails to effectively examine the dynamic responses of different LLMs when engaging with users in
+                        complex, long-horizon simulation tasks.
+                    </p>
+                    <p>
+                        In addition, these benchmarks primarily concentrate on tasks related to general information
+                        retrieval and creative writing, with less emphasis on complex simulation abilities. The existing
+                        role-playing benchmarks tend to focus on replicating the language styles of famous characters,
+                        an aspect that barely begins to explore the full range of simulation capabilities. This
+                        highlights the need for more comprehensive benchmarks that can thoroughly assess the
+                        wide-ranging simulation potential of LLMs.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 
     <div class="container">
 
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Tasks for SimulBench</h2>
-        <div class="content has-text-justified">
-          <p>
-          We have gathered 168 distinct simulation tasks that require ChatGPT to perform in a variety of roles. These roles include acting as a Linux terminal, an SQL executor, a player for text-based games such as tic-tac-toe, an interviewer for specific roles such as a software developer, a personal investment manager, a generator for passwords with particular constraints, an ASCII art creator, a predictor of chemical reactions, and more. Each task specification comes with a role description, some output requirements and an initial user request.           </p>
-          <p>
-<!--        <div class="content has-text-centered">-->
-<!--          <img src="static/images/figure3.jpg" alt="algebraic reasoning" class="center">-->
-<!--          <p> Summary of our proposed dataset OpenCodeInterpreter construction and comparison with existing code instruction tuning datasets. M.T: Multi Turn, E.F: Execute Feedback, H.F: Human Feedback.</p>-->
-<!--        </div>-->
+        <div class="columns is-centered has-text-centered">
+            <!-- <div class="column is-full-width has-text-centered"> -->
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Tasks for SimulBench</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We have gathered 168 distinct simulation tasks that require ChatGPT to perform in a variety of
+                        roles. These roles include acting as a Linux terminal, an SQL executor, a player for text-based
+                        games such as tic-tac-toe, an interviewer for specific roles such as a software developer, a
+                        personal investment manager, a generator for passwords with particular constraints, an ASCII art
+                        creator, a predictor of chemical reactions, and more. Each task specification comes with a role
+                        description, some output requirements and an initial user request. </p>
+                    <p>
+                        <!--        <div class="content has-text-centered">-->
+                        <!--          <img src="static/images/figure3.jpg" alt="algebraic reasoning" class="center">-->
+                        <!--          <p> Summary of our proposed dataset OpenCodeInterpreter construction and comparison with existing code instruction tuning datasets. M.T: Multi Turn, E.F: Execute Feedback, H.F: Human Feedback.</p>-->
+                        <!--        </div>-->
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 
     <div class="container">
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Dynamic Multi-Turn Evaluation</h2>
-        <div class="content has-text-justified">
-          <p>
-          MT-bench is designed to test Language Models (LLMs) in a two-turn conversation, where the second turn is predefined. However, our SimulBench necessitates multiple turns between users and LLMs. Depending on the task types and context window limit, some tasks may involve conversations exceeding 5 turns, with the majority spanning over 2 turns. To replicate realistic usage scenarios of LLMs, we employ OpenAI's GPT-3.5 to simulate a user interacting continuously with the LLMs under evaluation. After gathering the dialogues between the user agent and each target LLM, we follow the methodology of previous studies, using GPT-4 to assess and rate the quality of these conversations.
-          <p>
+        <div class="columns is-centered has-text-centered">
+            <!-- <div class="column is-full-width has-text-centered"> -->
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Dynamic Multi-Turn Evaluation</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        MT-bench is designed to test Language Models (LLMs) in a two-turn conversation, where the second
+                        turn is predefined. However, our SimulBench necessitates multiple turns between users and LLMs.
+                        Depending on the task types and context window limit, some tasks may involve conversations
+                        exceeding 5 turns, with the majority spanning over 2 turns. To replicate realistic usage
+                        scenarios of LLMs, we employ OpenAI's GPT-3.5 to simulate a user interacting continuously with
+                        the LLMs under evaluation. After gathering the dialogues between the user agent and each target
+                        LLM, we follow the methodology of previous studies, using GPT-4 to assess and rate the quality
+                        of these conversations.
+                    <p>
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 
     <div class="container">
-      <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Experimental Results and Findings</h2>
-        <div class="content has-text-justified">
-          <p>
-          Our study involved an analysis of four widely used open Language Learning Models (LLMs), specifically Llama-2-chat (7B/13B/70B) and Mixtral (8x7B). These models are often ranked highly on several existing leaderboards, such as the Chatbot Arena. Our findings revealed a substantial performance gap between these open-source LLMs and GPT-4-turbo. Even the largest open LLM, Llama-2-70b-chat, was surpassed by GPT-4 turbo by a margin of 37.95\% on the hard subset of SimulBench.
-          <p>
-          We also observed that LLMs, including GPT-4-turbo, tend to exhibit poorer performance in simulation tasks that necessitate objective outputs. For instance, GPT-4-turbo's performance on simulation tasks of simple but useful objective tools, such as generating a random password with requirements for characters, scored only 8.20, conspicuously dropped from 9.23 of the subjective ones. In addition, we noticed a significant decrease in LLMs' performance when simulation tasks demand long-horizon memory, complex reasoning, and compositional instructions, especially for open LLMs. Mixtral achieved 9.07 on general role-playing tasks, but only 7.43 in simulation tasks that required a self-contained system (such as a Linux terminal).
-          <div>
+        <div class="columns is-centered has-text-centered">
+            <!-- <div class="column is-full-width has-text-centered"> -->
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Experimental Results and Findings</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Our study involved an analysis of four widely used open Language Learning Models (LLMs),
+                        specifically Llama-2-chat (7B/13B/70B) and Mixtral (8x7B). These models are often ranked highly
+                        on several existing leaderboards, such as the Chatbot Arena. Our findings revealed a substantial
+                        performance gap between these open-source LLMs and GPT-4-turbo. Even the largest open LLM,
+                        Llama-2-70b-chat, was surpassed by GPT-4 turbo by a margin of 37.95\% on the hard subset of
+                        SimulBench.
+                    <p>
+                        We also observed that LLMs, including GPT-4-turbo, tend to exhibit poorer performance in
+                        simulation tasks that necessitate objective outputs. For instance, GPT-4-turbo's performance on
+                        simulation tasks of simple but useful objective tools, such as generating a random password with
+                        requirements for characters, scored only 8.20, conspicuously dropped from 9.23 of the subjective
+                        ones. In addition, we noticed a significant decrease in LLMs' performance when simulation tasks
+                        demand long-horizon memory, complex reasoning, and compositional instructions, especially for
+                        open LLMs. Mixtral achieved 9.07 on general role-playing tasks, but only 7.43 in simulation
+                        tasks that required a self-contained system (such as a Linux terminal).
+                    <div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
-      </div>
 
-    </div>
-
-
-    <!-- <div class="columns is-centered m-6">
-      <div class="column is-max-desktop has-text-centered">
-        <h2 class="title is-3" id="visualization">Visualization</h2>
-        <iframe src="visualizer/explore.html" style="width: 100%;min-height: 100vh; border-radius: 20px;"></iframe>
-      </div>
-    </div> -->
-  </div>
+        <!--  </div>-->
 </section>
 
 <!-- RESULTS SECTION -->
 <section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-    <h1 class="title is-1 mmmu" id="mainresults">Main Results</h1>
-  </div>
+    <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu" id="mainresults">Main Results</h1>
+    </div>
 </section>
 <section class="section">
-  <div class="container">
-<!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
-    <div class="columns is-centered m-6">
-        <div class="column is-full has-text-centered content">
-          <!-- <h2 class="title is-3" id="leaderboard"></h2> -->
-          <div class="content">
-            <div class="content has-text-justified">
-              <p>
+    <div class="container">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <!-- <div class="column is-full-width has-text-centered"> -->
+                <div class="column is-four-fifths">
+                    <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
+                    <!--    <div class="columns is-centered m-6">-->
+                    <!--        <div class="column is-full has-text-centered content">-->
+                    <!-- <h2 class="title is-3" id="leaderboard"></h2> -->
+                    <!--          <div class="content">-->
+                    <div class="content has-text-justified">
+                        <p>
 
-                This section outlines the results for benchmarking the LLMs on SimulBench. We delve into different categories of simulation tasks for more in-depth analysis.
-              <p>
-              Based on the nature of the output information, we have bifurcated the tasks into two distinct categories:
-              <ul>
-              <li>Objective: This category includes 90 tasks that involve information which can be fact-checked or verified according to set rules and facts;</li>
-              <li>Subjective: This category, on the other hand, comprises 78 tasks that primarily focus on feelings, opinions, or emotions.</li>
-              </ul>
-              <p>
-              We categorize the simulation tasks into three distinct types based on their targets:
-              <ul>
-              <li>System: In 21 instances, the task requires simulating a real or game-based system, platform, or environment, among others;</li>
-              <li>Tool: In 38 instances, the task is to simulate practical tools;</li>
-              <li>Role: In 109 instances, the task involves impersonating a real person, a specific profession, or a fictional character.</li>
-              </ul>
-                <p>
-                We also further filtered out a challenging subset of SimulBench, indicated by their lower scores and a notable gap between the proprietary model and open-source models.
-              <p>
-              Overall, we found that LLMs struggle with objective simulations and struggle to accurately simulate systems and tools.
-              </p>
+                            This section outlines the results for benchmarking the LLMs on SimulBench. We delve into
+                            different categories of simulation tasks for more in-depth analysis.
+                        <p>
+                            Based on the nature of the output information, we have bifurcated the tasks into two
+                            distinct categories:
+                        <ul>
+                            <li>Objective: This category includes 90 tasks that involve information which can be
+                                fact-checked or verified according to set rules and facts;
+                            </li>
+                            <li>Subjective: This category, on the other hand, comprises 78 tasks that primarily focus on
+                                feelings, opinions, or emotions.
+                            </li>
+                        </ul>
+                        <p>
+                            We categorize the simulation tasks into three distinct types based on their targets:
+                        <ul>
+                            <li>System: In 21 instances, the task requires simulating a real or game-based system,
+                                platform, or environment, among others;
+                            </li>
+                            <li>Tool: In 38 instances, the task is to simulate practical tools;</li>
+                            <li>Role: In 109 instances, the task involves impersonating a real person, a specific
+                                profession, or a fictional character.
+                            </li>
+                        </ul>
+                        <p>
+                            We also further filtered out a challenging subset of SimulBench, indicated by their lower
+                            scores and a notable gap between the proprietary model and open-source models.
+                        <p>
+                            Overall, we found that LLMs struggle with objective simulations and struggle to accurately
+                            simulate systems and tools.
+                        </p>
+                    </div>
+                </div>
             </div>
-
-
-
-            <!-- <button id="toggleButton" onclick="changeButtonText()"><b style='font-size: larger;'>Validation Set Leaderboard</b> (Click to Switch)</button> -->
-            <b style='font-size: larger;'>
-              Micro-averaged scores of different LLMs on SimulBench.
-            </b>
-
-<!--            <div class="content has-text-justified">-->
-<!--              <p style="text-align: center;">`CL': based on CodeLlama; `DS': based on DeepseekCoder. -->
-<!--                Baseline results are copied from the EvalPlus Leaderboard or replicated by running the official checkpoints.-->
-<!--              </p>-->
-<!--            </div>-->
-<!--            <div class="model-labels-container">-->
-<!--              <span class="leaderboard-label" style="background-color: #ffffcc;">Strong Baselines</span>-->
-<!--              <span class="leaderboard-label" style="background-color: #a0c4ff;">Our Methods</span>-->
-<!--            </div>-->
-
-            <div style="overflow-x: auto;">
-            <table id="table1" class="js-sort-table" style="min-width: 100%;">
-              <thead>
-              <tr>
-              <th style="text-align: center; vertical-align: middle;" rowspan="2">Model</th>
-              <th colspan="2">Information Property</th>
-              <th colspan="3">Simulation Target</th>
-              <th style="text-align: center; vertical-align: middle;" rowspan="2">All</th>
-              <th style="text-align: center; vertical-align: middle;" rowspan="2">Hard</th>
-              </tr>
-              <tr>
-              <th>Objective</th>
-              <th>Subjective</th>
-              <th>System</th>
-              <th>Tool</th>
-              <th>Role</th>
-              </tr>
-              </thead>
-              <tbody>
-<!--                <tr style="background-color: #ffffcc;">-->
-                <td style="text-align: left;">GPT-4 Turbo</td>
-                <td>8.89</td>
-                <td>9.21</td>
-                <td>8.90</td>
-                <td>8.55</td>
-                <td>9.23</td>
-                <td>9.04</td>
-                <td>8.47</td>
-                </tr>
-
-                <td style="text-align: left;">Mixtral</td>
-                <td>7.69</td>
-                <td>9.00</td>
-                <td>6.81</td>
-                <td>7.84</td>
-                <td>8.75</td>
-                <td>8.30</td>
-                <td>6.14</td>
-                </tr>
-
-                <td style="text-align: left;">Llama-2-70B-chat</td>
-                <td>7.69</td>
-                <td>9.00</td>
-                <td>6.81</td>
-                <td>7.84</td>
-                <td>8.75</td>
-                <td>8.30</td>
-                <td>6.14</td>
-                </tr>
-
-                <td style="text-align: left;">Llama-2-13B-chat</td>
-                <td>7.37</td>
-                <td>8.93</td>
-                <td>5.48</td>
-                <td>7.24</td>
-                <td>8.89</td>
-                <td>8.09</td>
-                <td>4.93</td>
-                </tr>
-
-                <td style="text-align: left;">Llama-2-7B-chat</td>
-                <td>7.38</td>
-                <td>8.87</td>
-                <td>6.29</td>
-                <td>7.13</td>
-                <td>8.74</td>
-                <td>8.07</td>
-                <td>5.00</td>
-                </tr>
-
-              </tbody>
-            </table>
-            </div>
-          </div>
         </div>
     </div>
-<!-------------------------------------------------------------------- Case Study-------------------------------------------------------------------->
-
-<!--    <div class="columns is-centered has-text-centered">-->
-<!--      <div class="column is-four-fifths">-->
-<!--        <h2 class="title is-3" id="example">Example</h2>-->
-<!--        <div class="content has-text-justified">-->
-<!--          <div style="margin: 0 auto; display: flex; justify-content: center;">-->
-<!--          &lt;!&ndash; 添加视频的HTML代码开始 &ndash;&gt;-->
-<!--          <video controls style="width: 100%;">-->
-<!--            <source src="static/images/demo.mp4" type="video/mp4">-->
-<!--          </video>-->
-<!--          &lt;!&ndash; 添加视频的HTML代码结束 &ndash;&gt;-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
 
 
-  </div>
+    <div class="container">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <!-- <div class="column is-full-width has-text-centered"> -->
+                <div class="column is-four-fifths">
+                    <!-- <button id="toggleButton" onclick="changeButtonText()"><b style='font-size: larger;'>Validation Set Leaderboard</b> (Click to Switch)</button> -->
+                    <b style='font-size: larger;'>
+                        Micro-averaged scores of different LLMs on SimulBench.
+                    </b>
+
+                    <!--            <div class="content has-text-justified">-->
+                    <!--              <p style="text-align: center;">`CL': based on CodeLlama; `DS': based on DeepseekCoder. -->
+                    <!--                Baseline results are copied from the EvalPlus Leaderboard or replicated by running the official checkpoints.-->
+                    <!--              </p>-->
+                    <!--            </div>-->
+                    <!--            <div class="model-labels-container">-->
+                    <!--              <span class="leaderboard-label" style="background-color: #ffffcc;">Strong Baselines</span>-->
+                    <!--              <span class="leaderboard-label" style="background-color: #a0c4ff;">Our Methods</span>-->
+                    <!--            </div>-->
+
+                    <div style="overflow-x: auto;">
+                        <table id="table1" class="js-sort-table" style="min-width: 100%;">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center; vertical-align: middle;" rowspan="2">Model</th>
+                                <th colspan="2">Information Property</th>
+                                <th colspan="3">Simulation Target</th>
+                                <th style="text-align: center; vertical-align: middle;" rowspan="2">All</th>
+                                <th style="text-align: center; vertical-align: middle;" rowspan="2">Hard</th>
+                            </tr>
+                            <tr>
+                                <th>Objective</th>
+                                <th>Subjective</th>
+                                <th>System</th>
+                                <th>Tool</th>
+                                <th>Role</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!--                <tr style="background-color: #ffffcc;">-->
+                            <td style="text-align: left;">GPT-4 Turbo</td>
+                            <td>8.89</td>
+                            <td>9.21</td>
+                            <td>8.90</td>
+                            <td>8.55</td>
+                            <td>9.23</td>
+                            <td>9.04</td>
+                            <td>8.47</td>
+                            </tr>
+
+                            <td style="text-align: left;">Mixtral</td>
+                            <td>7.69</td>
+                            <td>9.00</td>
+                            <td>6.81</td>
+                            <td>7.84</td>
+                            <td>8.75</td>
+                            <td>8.30</td>
+                            <td>6.14</td>
+                            </tr>
+
+                            <td style="text-align: left;">Llama-2-70B-chat</td>
+                            <td>7.69</td>
+                            <td>9.00</td>
+                            <td>6.81</td>
+                            <td>7.84</td>
+                            <td>8.75</td>
+                            <td>8.30</td>
+                            <td>6.14</td>
+                            </tr>
+
+                            <td style="text-align: left;">Llama-2-13B-chat</td>
+                            <td>7.37</td>
+                            <td>8.93</td>
+                            <td>5.48</td>
+                            <td>7.24</td>
+                            <td>8.89</td>
+                            <td>8.09</td>
+                            <td>4.93</td>
+                            </tr>
+
+                            <td style="text-align: left;">Llama-2-7B-chat</td>
+                            <td>7.38</td>
+                            <td>8.87</td>
+                            <td>6.29</td>
+                            <td>7.13</td>
+                            <td>8.74</td>
+                            <td>8.07</td>
+                            <td>5.00</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------- Case Study-------------------------------------------------------------------->
+
+    <!--    <div class="columns is-centered has-text-centered">-->
+    <!--      <div class="column is-four-fifths">-->
+    <!--        <h2 class="title is-3" id="example">Example</h2>-->
+    <!--        <div class="content has-text-justified">-->
+    <!--          <div style="margin: 0 auto; display: flex; justify-content: center;">-->
+    <!--          &lt;!&ndash; 添加视频的HTML代码开始 &ndash;&gt;-->
+    <!--          <video controls style="width: 100%;">-->
+    <!--            <source src="static/images/demo.mp4" type="video/mp4">-->
+    <!--          </video>-->
+    <!--          &lt;!&ndash; 添加视频的HTML代码结束 &ndash;&gt;-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
 </section>
-
 
 
 <!-- TODO: bibtex -->
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-3 has-text-centered">BibTeX</h2>
-    <pre><code>
+    <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+        <pre><code>
       @article{simulbench2024,
         title={SimulBench: Evaluating LLMs with Diverse Simulation Tasks},
         author={Qi Jia, Xiang Yue, Tianyu Zheng, Jie Huang, and Bill Yuchen Lin},
@@ -507,1529 +578,1555 @@
         primaryClass={cs.CL}
       }
 </code></pre>
-  </div>
+    </div>
 </section>
 
 <footer class="footer">
-  <!-- <div class="container"> -->
+    <!-- <div class="container"> -->
     <div class="content has-text-centered">
     </div>
     <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is website adapted from <a href="https://mmmu.github.io/">MMMU</a> and <a href="https://opencodeinterpreter.github.io/">opencodeinterpreter</a>, licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+        <div class="column is-8">
+            <div class="content">
+                <p>
+                    This website is website adapted from <a href="https://mmmu.github.io/">MMMU</a> and <a
+                        href="https://opencodeinterpreter.github.io/">opencodeinterpreter</a>, licensed under a <a
+                        rel="license"
+                        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-  <!-- </div> -->
+    <!-- </div> -->
 
 </footer>
 
 <script>
-//   function changeButtonText() {
-//     var button = document.getElementById('toggleButton');
-//     if (button.innerHTML.includes("Human")) {
-//       button.innerHTML = "<b style='font-size: larger;'>Test Set Leaderboard</b> (Click to Switch)";
-//     } else {
-//       button.innerHTML = "<b style='font-size: larger;'>Validation Set Leaderboard</b> (Click to Switch)";
-//     }
-//   }
-//   document.addEventListener('DOMContentLoaded', function() {
-//     var tables = document.querySelectorAll('table');
+    //   function changeButtonText() {
+    //     var button = document.getElementById('toggleButton');
+    //     if (button.innerHTML.includes("Human")) {
+    //       button.innerHTML = "<b style='font-size: larger;'>Test Set Leaderboard</b> (Click to Switch)";
+    //     } else {
+    //       button.innerHTML = "<b style='font-size: larger;'>Validation Set Leaderboard</b> (Click to Switch)";
+    //     }
+    //   }
+    //   document.addEventListener('DOMContentLoaded', function() {
+    //     var tables = document.querySelectorAll('table');
 
-//     tables.forEach(function(table) {
-//         if (!table) return;
+    //     tables.forEach(function(table) {
+    //         if (!table) return;
 
-//         var initialRows = Array.from(table.rows).slice(1);
-//         table.addEventListener('click', function(event) {
-//             var clickedCell = event.target.closest('td, th');
-//             if (!clickedCell) return;
-//             var headerRow = clickedCell.parentNode;
-//             var columnIndex = Array.from(headerRow.cells).indexOf(clickedCell);
-//             var type = clickedCell.getAttribute('data-type');
+    //         var initialRows = Array.from(table.rows).slice(1);
+    //         table.addEventListener('click', function(event) {
+    //             var clickedCell = event.target.closest('td, th');
+    //             if (!clickedCell) return;
+    //             var headerRow = clickedCell.parentNode;
+    //             var columnIndex = Array.from(headerRow.cells).indexOf(clickedCell);
+    //             var type = clickedCell.getAttribute('data-type');
 
-//             if (headerRow.rowIndex === 0) {
-//                 if (columnIndex === 0) {
-//                     table.tBodies[0].innerHTML = '';
-//                     initialRows.forEach(row => table.tBodies[0].appendChild(row.cloneNode(true)));
-//                 }
-//             }
-//         });
-//     });
-// });
+    //             if (headerRow.rowIndex === 0) {
+    //                 if (columnIndex === 0) {
+    //                     table.tBodies[0].innerHTML = '';
+    //                     initialRows.forEach(row => table.tBodies[0].appendChild(row.cloneNode(true)));
+    //                 }
+    //             }
+    //         });
+    //     });
+    // });
 
-function sortTable(table, column, type, asc) {
-    var tbody = table.tBodies[0];
-    var rows = Array.from(tbody.rows);
+    function sortTable(table, column, type, asc) {
+        var tbody = table.tBodies[0];
+        var rows = Array.from(tbody.rows);
 
-    rows.sort(function(a, b) {
-        var valA = a.cells[column].textContent;
-        var valB = b.cells[column].textContent;
+        rows.sort(function (a, b) {
+            var valA = a.cells[column].textContent;
+            var valB = b.cells[column].textContent;
 
-        if (type === 'number') {
-            valA = parseFloat(valA);
-            valB = parseFloat(valB);
-        }
+            if (type === 'number') {
+                valA = parseFloat(valA);
+                valB = parseFloat(valB);
+            }
 
-        return asc ? valA - valB : valB - valA;
-    });
+            return asc ? valA - valB : valB - valA;
+        });
 
-    rows.forEach(row => tbody.appendChild(row));
-}
-
-  // 切换表格的函数
-  function toggleTables () {
-      var table1 = document.getElementById('table1');
-      var table2 = document.getElementById('table2');
-      table1.classList.toggle('hidden');
-      table2.classList.toggle('hidden');
-  }
-
-  document.getElementById('toggleButton').addEventListener('click', toggleTables);
-  const canvas = document.getElementById('difficulty_level_chart');
-  canvas.style.width = '500px';
-  canvas.style.height = '120px';
-  const ctx = document.getElementById('difficulty_level_chart').getContext('2d');
-  const difficulty_level_chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Easy', 'Medium', 'Hard', 'Overall'],
-      datasets: [{
-        label: 'Fuyu-8B',
-        data: [28.9, 27, 26.4, 27.4],
-        backgroundColor: 'rgba(196, 123, 160, 0.6)',
-        borderColor: 'rgba(196, 123, 160, 1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(196, 123, 160, 1)'
-      },
-      {
-        label: 'Qwen-VL-7B',
-        data: [39.4, 31.9, 27.6, 32.9],
-        backgroundColor: 'rgba(245, 123, 113, 0.6)',
-        borderColor: 'rgba(245, 123, 113, 1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(245, 123, 113, 1)'
-      },
-      {
-        label: 'LLaVA-1.5-13B',
-        data: [41.3, 32.7, 26.7, 33.6],
-        backgroundColor: 'rgba(255, 208, 80, 0.6)',
-        borderColor: 'rgba(255, 208, 80, 1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255, 208, 80, 1)'
-      },
-      {
-        label: 'InstructBLIP-T5-XXL',
-        data: [40.3, 32.3, 29.4, 33.8],
-        backgroundColor: 'rgba(110, 194, 134, 0.6)',
-        borderColor: 'rgba(110, 194, 134, 1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(110, 194, 134, 1)'
-      },
-      {
-        label: 'BLIP-2 FLAN-T5-XXL',
-        data: [41, 32.7, 28.5, 34],
-        backgroundColor: 'rgba(255, 153, 78, 0.6)',
-        borderColor: 'rgba(255, 153, 78, 1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255, 153, 78, 1)'
-      },
-      {
-        label: 'GPT-4V',
-        data: [76.1, 55.6, 31.2, 55.7],
-        backgroundColor: 'rgba(117, 209, 215, 0.6)',
-        borderColor: 'rgba(117, 209, 215, 1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(117, 209, 215, 1)'
-      }]
-    },
-    options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        min: 0,
-        max: 100,
-        ticks: {
-          stepSize: 20,
-          font: {
-            size: 16
-          }
-        }
-      },
-      x: {
-        ticks: {
-          font: {
-            size: 16 // 设置X轴字体大小
-          }
-        }
-      }
-    },
-    plugins: {
-      legend: {
-        labels: {
-          font: {
-            size: 16 // 设置标签文字大小
-          }
-        }
-      },
-      tooltip: {
-        callbacks: {
-          label: function(context) {
-            return context.dataset.label + ': ' + context.parsed.y;
-          }
-        }
-      }
-    },
-      onHover: (event, chartElement) => {
-        event.native.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
-      }
+        rows.forEach(row => tbody.appendChild(row));
     }
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    // Data for the "Diagrams" chart
-    const data_Diagrams = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [27.6, 30.1, 31.8, 30.0, 32.0, 46.8],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
 
-    // "data_Diagrams" chart
-    new Chart(document.getElementById('chart_Diagrams'), {
-        type: 'bar',
-        data: data_Diagrams,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
-            }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+    // 切换表格的函数
+    function toggleTables() {
+        var table1 = document.getElementById('table1');
+        var table2 = document.getElementById('table2');
+        table1.classList.toggle('hidden');
+        table2.classList.toggle('hidden');
+    }
 
-    // "data_Tables" chart
-    const data_Tables  = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [26.6, 29.0, 29.8, 27.8, 27.8, 61.8],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Tables'), {
+    document.getElementById('toggleButton').addEventListener('click', toggleTables);
+    const canvas = document.getElementById('difficulty_level_chart');
+    canvas.style.width = '500px';
+    canvas.style.height = '120px';
+    const ctx = document.getElementById('difficulty_level_chart').getContext('2d');
+    const difficulty_level_chart = new Chart(ctx, {
         type: 'bar',
-        data: data_Tables,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
-            }
-          },
-          x: {
-            display: false
-          }
+        data: {
+            labels: ['Easy', 'Medium', 'Hard', 'Overall'],
+            datasets: [{
+                label: 'Fuyu-8B',
+                data: [28.9, 27, 26.4, 27.4],
+                backgroundColor: 'rgba(196, 123, 160, 0.6)',
+                borderColor: 'rgba(196, 123, 160, 1)',
+                borderWidth: 1,
+                hoverBackgroundColor: 'rgba(196, 123, 160, 1)'
+            },
+                {
+                    label: 'Qwen-VL-7B',
+                    data: [39.4, 31.9, 27.6, 32.9],
+                    backgroundColor: 'rgba(245, 123, 113, 0.6)',
+                    borderColor: 'rgba(245, 123, 113, 1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(245, 123, 113, 1)'
+                },
+                {
+                    label: 'LLaVA-1.5-13B',
+                    data: [41.3, 32.7, 26.7, 33.6],
+                    backgroundColor: 'rgba(255, 208, 80, 0.6)',
+                    borderColor: 'rgba(255, 208, 80, 1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(255, 208, 80, 1)'
+                },
+                {
+                    label: 'InstructBLIP-T5-XXL',
+                    data: [40.3, 32.3, 29.4, 33.8],
+                    backgroundColor: 'rgba(110, 194, 134, 0.6)',
+                    borderColor: 'rgba(110, 194, 134, 1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(110, 194, 134, 1)'
+                },
+                {
+                    label: 'BLIP-2 FLAN-T5-XXL',
+                    data: [41, 32.7, 28.5, 34],
+                    backgroundColor: 'rgba(255, 153, 78, 0.6)',
+                    borderColor: 'rgba(255, 153, 78, 1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(255, 153, 78, 1)'
+                },
+                {
+                    label: 'GPT-4V',
+                    data: [76.1, 55.6, 31.2, 55.7],
+                    backgroundColor: 'rgba(117, 209, 215, 0.6)',
+                    borderColor: 'rgba(117, 209, 215, 1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(117, 209, 215, 1)'
+                }]
         },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 100,
+                    ticks: {
+                        stepSize: 20,
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            size: 16 // 设置X轴字体大小
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 16 // 设置标签文字大小
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            return context.dataset.label + ': ' + context.parsed.y;
+                        }
+                    }
+                }
+            },
+            onHover: (event, chartElement) => {
+                event.native.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+            }
         }
-      }
     });
+    document.addEventListener('DOMContentLoaded', function () {
+        // Data for the "Diagrams" chart
+        const data_Diagrams = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [27.6, 30.1, 31.8, 30.0, 32.0, 46.8],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
 
-    // "data_PlotsAndCharts " chart
-    const data_PlotsAndCharts   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [24.8, 31.8, 36.2, 30.4, 35.8, 55.6],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_PlotsAndCharts'), {
-        type: 'bar',
-        data: data_PlotsAndCharts ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Diagrams" chart
+        new Chart(document.getElementById('chart_Diagrams'), {
+            type: 'bar',
+            data: data_Diagrams,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_ChemicalStructures " chart
-    const data_ChemicalStructures   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [25.0, 27.2, 27.1, 26.7, 25.5, 50.6],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_ChemicalStructures'), {
-        type: 'bar',
-        data: data_ChemicalStructures ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Tables" chart
+        const data_Tables = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [26.6, 29.0, 29.8, 27.8, 27.8, 61.8],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Tables'), {
+            type: 'bar',
+            data: data_Tables,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Photographs " chart
-    const data_Photographs   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [27.6, 40.5, 41.4, 44.4, 42.0, 64.2],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Photographs'), {
-        type: 'bar',
-        data: data_Photographs ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_PlotsAndCharts " chart
+        const data_PlotsAndCharts = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [24.8, 31.8, 36.2, 30.4, 35.8, 55.6],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_PlotsAndCharts'), {
+            type: 'bar',
+            data: data_PlotsAndCharts,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Paintings " chart
-    const data_Paintings   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [28.7, 57.2, 53.6, 56.3, 52.1, 75.9],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Paintings'), {
-        type: 'bar',
-        data: data_Paintings ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_ChemicalStructures " chart
+        const data_ChemicalStructures = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [25.0, 27.2, 27.1, 26.7, 25.5, 50.6],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_ChemicalStructures'), {
+            type: 'bar',
+            data: data_ChemicalStructures,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_GeometricShapes " chart
-    const data_GeometricShapes   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [21.1, 25.3, 21.4, 25.6, 28.3, 40.2],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_GeometricShapes'), {
-        type: 'bar',
-        data: data_GeometricShapes ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Photographs " chart
+        const data_Photographs = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [27.6, 40.5, 41.4, 44.4, 42.0, 64.2],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Photographs'), {
+            type: 'bar',
+            data: data_Photographs,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_SheetMusic " chart
-    const data_SheetMusic   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [35.2, 33.4, 34.6, 35.8, 34.9, 38.8],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_SheetMusic'), {
-        type: 'bar',
-        data: data_SheetMusic ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Paintings " chart
+        const data_Paintings = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [28.7, 57.2, 53.6, 56.3, 52.1, 75.9],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Paintings'), {
+            type: 'bar',
+            data: data_Paintings,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_MedicalImages " chart
-    const data_MedicalImages   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [25.4, 29.8, 31.6, 36.4, 29.8, 59.6],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_MedicalImages'), {
-        type: 'bar',
-        data: data_MedicalImages ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_GeometricShapes " chart
+        const data_GeometricShapes = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [21.1, 25.3, 21.4, 25.6, 28.3, 40.2],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_GeometricShapes'), {
+            type: 'bar',
+            data: data_GeometricShapes,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_PathologicalImages " chart
-    const data_PathologicalImages   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [26.5, 27.7, 31.2, 35.2, 35.6, 63.6],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_PathologicalImages'), {
-        type: 'bar',
-        data: data_PathologicalImages ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_SheetMusic " chart
+        const data_SheetMusic = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [35.2, 33.4, 34.6, 35.8, 34.9, 38.8],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_SheetMusic'), {
+            type: 'bar',
+            data: data_SheetMusic,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_MicroscopicImages " chart
-    const data_MicroscopicImages   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [27.0, 37.6, 29.2, 36.3, 32.7, 58.0],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_MicroscopicImages'), {
-        type: 'bar',
-        data: data_MicroscopicImages ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_MedicalImages " chart
+        const data_MedicalImages = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [25.4, 29.8, 31.6, 36.4, 29.8, 59.6],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_MedicalImages'), {
+            type: 'bar',
+            data: data_MedicalImages,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_MRIsCTScansXrays " chart
-    const data_MRIsCTScansXrays   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [21.7, 36.9, 33.3, 39.4, 29.8, 50.0],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_MRIsCTScansXrays'), {
-        type: 'bar',
-        data: data_MRIsCTScansXrays ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_PathologicalImages " chart
+        const data_PathologicalImages = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [26.5, 27.7, 31.2, 35.2, 35.6, 63.6],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_PathologicalImages'), {
+            type: 'bar',
+            data: data_PathologicalImages,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_SketchesAndDrafts " chart
-    const data_SketchesAndDrafts   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [37.0, 32.1, 29.9, 38.0, 33.7, 55.4],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_SketchesAndDrafts'), {
-        type: 'bar',
-        data: data_SketchesAndDrafts ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_MicroscopicImages " chart
+        const data_MicroscopicImages = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [27.0, 37.6, 29.2, 36.3, 32.7, 58.0],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_MicroscopicImages'), {
+            type: 'bar',
+            data: data_MicroscopicImages,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Maps " chart
-    const data_Maps   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [38.2, 36.5, 45.9, 47.6, 43.5, 61.8],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Maps'), {
-        type: 'bar',
-        data: data_Maps ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_MRIsCTScansXrays " chart
+        const data_MRIsCTScansXrays = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [21.7, 36.9, 33.3, 39.4, 29.8, 50.0],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_MRIsCTScansXrays'), {
+            type: 'bar',
+            data: data_MRIsCTScansXrays,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_TechnicalBlueprints " chart
-    const data_TechnicalBlueprints   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [24.7, 25.9, 28.4, 25.3, 27.8, 38.9],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_TechnicalBlueprints'), {
-        type: 'bar',
-        data: data_TechnicalBlueprints ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_SketchesAndDrafts " chart
+        const data_SketchesAndDrafts = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [37.0, 32.1, 29.9, 38.0, 33.7, 55.4],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_SketchesAndDrafts'), {
+            type: 'bar',
+            data: data_SketchesAndDrafts,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_TreesAndGraphs " chart
-    const data_TreesAndGraphs   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [30.1, 28.1, 28.8, 28.8, 34.9, 50.0],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_TreesAndGraphs'), {
-        type: 'bar',
-        data: data_TreesAndGraphs ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Maps " chart
+        const data_Maps = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [38.2, 36.5, 45.9, 47.6, 43.5, 61.8],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Maps'), {
+            type: 'bar',
+            data: data_Maps,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_MathematicalNotations " chart
-    const data_MathematicalNotations   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [15.8, 27.1, 22.6, 21.8, 21.1, 45.9],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_MathematicalNotations'), {
-        type: 'bar',
-        data: data_MathematicalNotations ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_TechnicalBlueprints " chart
+        const data_TechnicalBlueprints = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [24.7, 25.9, 28.4, 25.3, 27.8, 38.9],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_TechnicalBlueprints'), {
+            type: 'bar',
+            data: data_TechnicalBlueprints,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_ComicsAndCartoons " chart
-    const data_ComicsAndCartoons   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [29.0, 51.9, 49.6, 54.2, 51.1, 68.7],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_ComicsAndCartoons'), {
-        type: 'bar',
-        data: data_ComicsAndCartoons ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_TreesAndGraphs " chart
+        const data_TreesAndGraphs = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [30.1, 28.1, 28.8, 28.8, 34.9, 50.0],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_TreesAndGraphs'), {
+            type: 'bar',
+            data: data_TreesAndGraphs,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Sculpture " chart
-    const data_Sculpture   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [30.8, 46.2, 49.6, 51.3, 53.0, 76.1],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Sculpture'), {
-        type: 'bar',
-        data: data_Sculpture ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_MathematicalNotations " chart
+        const data_MathematicalNotations = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [15.8, 27.1, 22.6, 21.8, 21.1, 45.9],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_MathematicalNotations'), {
+            type: 'bar',
+            data: data_MathematicalNotations,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Portraits " chart
-    const data_Portraits   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [20.9, 52.7, 46.2, 54.9, 47.3, 70.3],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Portraits'), {
-        type: 'bar',
-        data: data_Portraits ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_ComicsAndCartoons " chart
+        const data_ComicsAndCartoons = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [29.0, 51.9, 49.6, 54.2, 51.1, 68.7],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_ComicsAndCartoons'), {
+            type: 'bar',
+            data: data_ComicsAndCartoons,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Screenshots " chart
-    const data_Screenshots   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [38.6, 35.7, 38.6, 34.3, 47.1, 65.7],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Screenshots'), {
-        type: 'bar',
-        data: data_Screenshots ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Sculpture " chart
+        const data_Sculpture = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [30.8, 46.2, 49.6, 51.3, 53.0, 76.1],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Sculpture'), {
+            type: 'bar',
+            data: data_Sculpture,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Other " chart
-    const data_Other   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [28.3, 38.3, 50.0, 51.7, 58.3, 68.3],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Other'), {
-        type: 'bar',
-        data: data_Other ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Portraits " chart
+        const data_Portraits = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [20.9, 52.7, 46.2, 54.9, 47.3, 70.3],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Portraits'), {
+            type: 'bar',
+            data: data_Portraits,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Poster " chart
-    const data_Poster   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [38.6, 50.9, 52.6, 61.4, 64.9, 80.7],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Poster'), {
-        type: 'bar',
-        data: data_Poster ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Screenshots " chart
+        const data_Screenshots = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [38.6, 35.7, 38.6, 34.3, 47.1, 65.7],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Screenshots'), {
+            type: 'bar',
+            data: data_Screenshots,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_IconsAndSymbols " chart
-    const data_IconsAndSymbols   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [23.8, 66.7, 57.1, 59.5, 59.5, 78.6],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_IconsAndSymbols'), {
-        type: 'bar',
-        data: data_IconsAndSymbols ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Other " chart
+        const data_Other = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [28.3, 38.3, 50.0, 51.7, 58.3, 68.3],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Other'), {
+            type: 'bar',
+            data: data_Other,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_HistoricalTimelines " chart
-    const data_HistoricalTimelines   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [30.0, 36.7, 40.0, 43.3, 43.3, 63.3],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_HistoricalTimelines'), {
-        type: 'bar',
-        data: data_HistoricalTimelines ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_Poster " chart
+        const data_Poster = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [38.6, 50.9, 52.6, 61.4, 64.9, 80.7],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Poster'), {
+            type: 'bar',
+            data: data_Poster,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_3DRenderings " chart
-    const data_3DRenderings   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [33.3, 28.6, 57.1, 38.1, 47.6, 47.6],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_3DRenderings'), {
-        type: 'bar',
-        data: data_3DRenderings ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_IconsAndSymbols " chart
+        const data_IconsAndSymbols = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [23.8, 66.7, 57.1, 59.5, 59.5, 78.6],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_IconsAndSymbols'), {
+            type: 'bar',
+            data: data_IconsAndSymbols,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_DNASequences " chart
-    const data_DNASequences   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [20.0, 45.0, 25.0, 25.0, 45.0, 55.0],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_DNASequences'), {
-        type: 'bar',
-        data: data_DNASequences ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_HistoricalTimelines " chart
+        const data_HistoricalTimelines = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [30.0, 36.7, 40.0, 43.3, 43.3, 63.3],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_HistoricalTimelines'), {
+            type: 'bar',
+            data: data_HistoricalTimelines,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Landscapes " chart
-    const data_Landscapes   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [43.8, 43.8, 50.0, 31.2, 62.5, 68.8],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Landscapes'), {
-        type: 'bar',
-        data: data_Landscapes ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_3DRenderings " chart
+        const data_3DRenderings = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [33.3, 28.6, 57.1, 38.1, 47.6, 47.6],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_3DRenderings'), {
+            type: 'bar',
+            data: data_3DRenderings,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_LogosAndBranding " chart
-    const data_LogosAndBranding   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [21.4, 57.1, 64.3, 35.7, 50.0, 85.7],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_LogosAndBranding'), {
-        type: 'bar',
-        data: data_LogosAndBranding ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-            ticks: {
-              stepSize: 20
+        // "data_DNASequences " chart
+        const data_DNASequences = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [20.0, 45.0, 25.0, 25.0, 45.0, 55.0],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_DNASequences'), {
+            type: 'bar',
+            data: data_DNASequences,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-          }
-        }
-      }
-    });
+        });
 
-    // "data_Advertisements " chart
-    const data_Advertisements   = {
-        labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
-        datasets: [{
-            data: [30.0, 60.0, 50.0, 60.0, 70.0, 100.0],
-            backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
-            borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
-            hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
-        }]
-    };
-    new Chart(document.getElementById('chart_Advertisements'), {
-        type: 'bar',
-        data: data_Advertisements ,
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            min: 0,     
-            max: 100,   
-            ticks: {
-              stepSize: 20 
+        // "data_Landscapes " chart
+        const data_Landscapes = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [43.8, 43.8, 50.0, 31.2, 62.5, 68.8],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Landscapes'), {
+            type: 'bar',
+            data: data_Landscapes,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
             }
-          },
-          x: {
-            display: false 
-          }
-        },
-        plugins: {
-          legend: {
-            display: false 
-          },
-          tooltip: {
-          }
-        }
-      }
+        });
+
+        // "data_LogosAndBranding " chart
+        const data_LogosAndBranding = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [21.4, 57.1, 64.3, 35.7, 50.0, 85.7],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_LogosAndBranding'), {
+            type: 'bar',
+            data: data_LogosAndBranding,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
+            }
+        });
+
+        // "data_Advertisements " chart
+        const data_Advertisements = {
+            labels: ['Fuyu-8B', 'Qwen-VL-7B', 'InstructBLIP-T5-XXL', 'LLaVA-1.5-13B', 'BLIP-2 FLAN-T5-XXL', 'GPT-4V'],
+            datasets: [{
+                data: [30.0, 60.0, 50.0, 60.0, 70.0, 100.0],
+                backgroundColor: ['rgba(196, 123, 160, 0.6)', 'rgba(245, 123, 113, 0.6)', 'rgba(255, 208, 80, 0.6)', 'rgba(110, 194, 134, 0.6)', 'rgba(255, 153, 78, 0.6)', 'rgba(117, 209, 215, 0.6)'],
+                borderColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,0.4)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)'],
+                hoverBackgroundColor: ['rgba(196, 123, 160, 1)', 'rgba(245, 123, 113,1)', 'rgba(255, 208, 80, 1)', 'rgba(110, 194, 134, 1)', 'rgba(255, 153, 78, 1)', 'rgba(117, 209, 215, 1)']
+            }]
+        };
+        new Chart(document.getElementById('chart_Advertisements'), {
+            type: 'bar',
+            data: data_Advertisements,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {}
+                }
+            }
+        });
     });
-});
 
 </script>
 
 <style>
-  .publication-links {
-    /* 在默认情况下，水平排列 */
-    display: flex;
-  }
-
-  /* 在屏幕宽度小于600px时，竖直排列 */
-  @media only screen and (max-width: 600px) {
     .publication-links {
-      display: flex;
-      flex-direction: column; /* 将元素竖直排列 */
+        /* 在默认情况下，水平排列 */
+        display: flex;
     }
-  }
 
-  .hidden {
-      display: none;
-  }
-  .sortable:hover {
-      cursor: pointer;
-  }
-  .asc::after {
-      content: ' ↑';
-  }
-  .desc::after {
-      content: ' ↓';
-  }
-  #toggleButton {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    color: #555555;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 25px; 
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition-duration: 0.4s;
-  }
-
-  #toggleButton:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* 鼠标悬停时的阴影效果 */
-  }
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    border-left: none;
-    border-right: none;
-    overflow-x: auto; /* 将 overflow-x 设置为 auto */
-  }
-
-  th, td {
-      text-align: left;
-      padding: 8px;
-      border-left: none;
-      border-right: none;
-  }
-
-  th {
-      background-color: #f2f2f2;
-      border-bottom: 2px solid #ddd;
-      border-left: none;
-      border-right: none;
-  }
-
-  td:hover {background-color: #ffffff;}
-  
-  /* 去掉第二行和第三行之间的横线 */
-  tr:nth-child(1) td {
-      border-bottom: none;
-  }
-  tr:nth-child(2) td {
-      border-bottom: none;
-  }
-  tr:nth-child(3) td {
-      border-bottom: none;
-  }
-  tr:nth-child(4) td {
-      border-bottom: none;
-  }
-  .dashed-border {
-      border-top: 2px dashed #ccc; /* 调整间隔宽度和颜色 */
-      /* border-image: linear-gradient(to right, #ccc 25%, transparent 25%) 1 1; */
+    /* 在屏幕宽度小于600px时，竖直排列 */
+    @media only screen and (max-width: 600px) {
+        .publication-links {
+            display: flex;
+            flex-direction: column; /* 将元素竖直排列 */
+        }
     }
-  .centered-span {
+
+    .hidden {
+        display: none;
+    }
+
+    .sortable:hover {
+        cursor: pointer;
+    }
+
+    .asc::after {
+        content: ' ↑';
+    }
+
+    .desc::after {
+        content: ' ↓';
+    }
+
+    #toggleButton {
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        color: #555555;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition-duration: 0.4s;
+    }
+
+    #toggleButton:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); /* 鼠标悬停时的阴影效果 */
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        border-left: none;
+        border-right: none;
+        overflow-x: auto; /* 将 overflow-x 设置为 auto */
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border-left: none;
+        border-right: none;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        border-bottom: 2px solid #ddd;
+        border-left: none;
+        border-right: none;
+    }
+
+    td:hover {
+        background-color: #ffffff;
+    }
+
+    /* 去掉第二行和第三行之间的横线 */
+    tr:nth-child(1) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(2) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(3) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(4) td {
+        border-bottom: none;
+    }
+
+    .dashed-border {
+        border-top: 2px dashed #ccc; /* 调整间隔宽度和颜色 */
+        /* border-image: linear-gradient(to right, #ccc 25%, transparent 25%) 1 1; */
+    }
+
+    .centered-span {
         display: flex;
         align-items: center;
         justify-content: center; /* 水平居中 */
         height: 100%; /* 让 span 高度充满单元格 */
     }
-  tr:nth-child(7) td {
-      border-bottom: none;
-  }
-  tr:nth-child(8) td {
-      border-bottom: none;
-  }
-  tr:nth-child(9) td {
-      border-bottom: none;
-  }
-  tr:nth-child(10) td {
-      border-bottom: none;
-  }
-  tr:nth-child(11) td {
-      border-bottom: none;
-  }
-  tr:nth-child(12) td {
-      border-bottom: none;
-  }
-  tr:nth-child(13) td {
-      border-bottom: none;
-  }
-  tr:nth-child(14) td {
-      border-bottom: none;
-  }
-  tr:nth-child(15) td {
-      border-bottom: none;
-  }
-  tr:nth-child(16) td {
-      border-bottom: none;
-  }
-  tr:nth-child(17) td {
-      border-bottom: none;
-  }
-  tr:nth-child(18) td {
-      border-bottom: none;
-  }
-  tr:nth-child(19) td {
-      border-bottom: none;
-  }
-  tr:nth-child(20) td {
-      border-bottom: none;
-  }
-  tr:nth-child(21) td {
-      border-bottom: none;
-  }
-  tr:nth-child(22) td {
-      border-bottom: none;
-  }
-  tr:nth-child(23) td {
-      border-bottom: none;
-  }
-  tr:nth-child(24) td {
-      border-bottom: none;
-  }
-  tr:nth-child(25) td {
-      border-bottom: none;
-  }
-  tr:nth-child(26) td {
-      border-bottom: none;
-  }
-  tr:nth-child(29) td {
-      border-bottom: none;
-  }
-  tr:nth-child(30) td {
-      border-bottom: none;
-  }
-  tr:nth-child(31) td {
-      border-bottom: none;
-  }
-  tr:nth-child(32) td {
-      border-bottom: none;
-  }
-  tr:nth-child(33) td {
-      border-bottom: none;
-  }
-  tr:nth-child(36) td {
-      border-bottom: none;
-  }
-  tr:nth-child(37) td {
-      border-bottom: none;
-  }
-  tr:nth-child(38) td {
-      border-bottom: none;
-  }
-  tr:nth-child(39) td {
-      border-bottom: none;
-  }
-  tr:nth-child(40) td {
-      border-bottom: none;
-  }
-  tr:nth-child(41) td {
-      border-bottom: none;
-  }
-  tr:nth-child(42) td {
-      border-bottom: none;
-  }
-  tr:nth-child(43) td {
-      border-bottom: none;
-  }
-  tr:nth-child(44) td {
-      border-bottom: none;
-  }
-  tr:nth-child(45) td {
-      border-bottom: none;
-  }
-  tr:nth-child(46) td {
-      border-bottom: none;
-  }
-  tr:nth-child(47) td {
-      border-bottom: none;
-  }
-  tr:nth-child(48) td {
-      border-bottom: none;
-  }
-  tr:nth-child(49) td {
-      border-bottom: none;
-  }
-  tr:nth-child(50) td {
-      border-bottom: none;
-  }
-  tr:nth-child(53) td {
-      border-bottom: none;
-  }
-  tr:nth-child(54) td {
-      border-bottom: none;
-  }
-  tr:nth-child(55) td {
-      border-bottom: none;
-  }
+
+    tr:nth-child(7) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(8) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(9) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(10) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(11) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(12) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(13) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(14) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(15) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(16) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(17) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(18) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(19) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(20) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(21) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(22) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(23) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(24) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(25) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(26) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(29) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(30) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(31) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(32) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(33) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(36) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(37) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(38) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(39) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(40) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(41) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(42) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(43) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(44) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(45) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(46) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(47) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(48) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(49) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(50) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(53) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(54) td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(55) td {
+        border-bottom: none;
+    }
 </style>
 
 </body>
