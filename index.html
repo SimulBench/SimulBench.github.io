@@ -58,10 +58,10 @@
                         Evaluating LLMs with Diverse Simulation Tasks
                     </h2>
                     <div class="is-size-5 publication-authors">
-            <span class="author-block">Qi Jia<sup style="color:#6fbf73;">4</sup>,
-            <span class="author-block">Xiang Yue<sup style="color:#ffac33;">2</sup>,<sup style="color:#6fbf73;">4</sup>,</span>
-            <span class="author-block">Tianyu Zheng<sup style="color:#6fbf73;">4</sup>,</span>
-            <span class="author-block">Jie Huang<sup style="color:#007bff;">3</sup>,</span>
+            <span class="author-block">Qi Jia<sup style="color:#ffac33;">2</sup>,
+            <span class="author-block">Xiang Yue<sup style="color:#eeff33f5;">3</sup></span>
+            <span class="author-block">Tianyu Zheng<sup style="color:#007bff;">4</sup>,</span>
+            <span class="author-block">Jie Huang<sup style="color:#6fbf73;">5</sup>,</span>
             <span class="author-block">
               <a href="https://yuchenlin.xyz/" style="text-decoration: none; color: inherit;">Bill Yuchen Lin<sup
                       style="color:#ed4b82;">1<sup></a>
@@ -74,9 +74,10 @@
                     <div class="is-size-5 publication-authors">
                         <!--            <span class="author-block"><sup style="color:#6fbf73;">1</sup>Shanghai Jiao Tong University,</span>-->
                         <span class="author-block"><sup style="color:#ed4b82;">1</sup>Allen Institute for AI,</span>
-                        <span class="author-block"><sup style="color:#ffac33;">2</sup>Ohio State University,</span>
-                        <span class="author-block"><sup style="color:#007bff;">3</sup>University of Illinois at Urbana-Champaign,</span>
-                        <span class="author-block"><sup style="color:#6fbf73;">4</sup>Multimodal Art Projection Research Community,</span>
+                        <span class="author-block"><sup style="color:#ffac33;">2</sup>National University of Singapore,</span>
+                        <span class="author-block"><sup style="color:#eeff33f5;">3</sup>Carnegie Mellon University,</span>
+                        <span class="author-block"><sup style="color:#007bff;">4</sup>University of Waterloo,</span>
+                        <span class="author-block"><sup style="color:#6fbf73;">5</sup>University of Illinois at Urbana-Champaign</span>
 
                     </div>
 
@@ -85,7 +86,7 @@
                         <!--            <span class="author-block">*Core Contributors</span><br>-->
                         <span class="author-block">†Corresponding to:</span>
                         <span class="author-block"><a href="mailto:yuchenl@allenai.org"> yuchenl@allenai.org</a>,</span>
-                        <span class="author-block"><a href="mailto:qijia0217@gmail.com">qijia0217@gmail.com</a></span>
+                        <span class="author-block"><a href="mailto:qijia0217@gmail.com">jia_qi@nus.edu.sg</a></span>
                         <!--            <span class="author-block"><a href="mailto:ge.zhang@uwaterloo.ca">ge.zhang@uwaterloo.ca</a>,</span>-->
                     </div>
 
@@ -246,18 +247,7 @@
                 <h2 class="title is-3">Introduction</h2>
                 <div class="content has-text-justified">
                     <p>
-                        We introduce SimulBench, a benchmark designed to evaluate large language models (LLMs) across a
-                        diverse collection of simulation scenarios, such as acting as a Linux terminal or playing text
-                        games with users. While these simulation tasks serve as effective measures of an LLM's general
-                        intelligence, they are seldom incorporated into existing benchmarks. A major challenge is to
-                        develop a shared evaluation environment for testing different LLMs in multi-turn interactions
-                        between users and AI. To tackle this issue, we suggest using a fixed LLM as a user agent to
-                        engage with multiple target LLMs under evaluation. To facilitate automatic assessment on
-                        SimulBench, GPT-4 is employed as the evaluator, tasked with reviewing the quality of the
-                        multi-turn dialogues between the user agent and the target LLMs. Our comprehensive experiments
-                        indicate that these simulation tasks continue to pose a significant challenge for even the most
-                        advanced open LLMs. For example, GPT-4-turbo outperforms Llama-2-70b-chat by a margin of
-                        37.95%. </p>
+                        We introduce SimulBench, a benchmark designed to evaluate large language models (LLMs) across a diverse collection of simulation scenarios, such as acting as a Linux terminal or playing text games with users. While these simulation tasks serve as effective measures of an LLM’s general intelligence, they are seldom incorporated into existing benchmarks. A major challenge is to develop an evaluation framework for testing different LLMs fairly while preserving the multi-round interactive nature of simulation tasks between users and AI. To tackle this issue, we suggest using a fixed LLM as a user agent to engage with an LLM to collect dialogues first under different tasks. Then, challenging dialogue scripts are extracted for evaluating different target LLMs. To facilitate automatic assessment on SimulBench, GPT-4 is employed as the evaluator, tasked with reviewing the quality of the final response generated by the target LLMs given multi-turn dialogue scripts. Our comprehensive experiments indicate that these simulation tasks continue to pose a significant challenge with their unique natures and show the gap between proprietary models and the most advanced open LLMs. For example, GPT-4-turbo outperforms LLaMA-3-70b-Chat on 18.55% more cases. </p>
                 </div>
             </div>
         </div>
@@ -284,28 +274,13 @@
                 <h2 class="title is-3">Motivation</h2>
                 <div class="content has-text-justified">
                     <p>
-                        The ability of large language models (LLMs) to simulate complex tasks is pivotal in driving the
-                        evolution of AI towards achieving general intelligence. These models exhibit remarkable
-                        versatility by adeptly assuming a wide range of roles—from acting as a Linux terminal to serving
-                        as an investment manager—highlighting their adaptability across various domains. Such
-                        flexibility underscores their potential for broad implementation. Consequently, the development
-                        of a benchmark dataset for simulation tasks is imperative in nurturing LLMs' progression towards
-                        becoming true generalists. </p>
+                        The ability of large language models (LLMs) to simulate complex tasks is pivotal in driving the evolution of AI towards achieving general intelligence. These models exhibit remarkable versatility by adeptly assuming a wide range of roles—from acting as a Linux terminal to serving as an investment manager—highlighting their adaptability across various domains. Such flexibility underscores their potential for broad implementation. Consequently, the development of a benchmark dataset for simulation tasks is imperative in nurturing LLMs’ progression toward becoming true generalists. </p>
 
                     <p>
-                        Nonetheless, existing benchmarks do not fully evaluate this potential. Current evaluations
-                        mainly focus on single-turn, static interactions between users and LLMs. While MT-bench attempts
-                        to consider multi-turn interactions with 80 examples, its reliance on predefined second queries
-                        fails to effectively examine the dynamic responses of different LLMs when engaging with users in
-                        complex, long-horizon simulation tasks.
+                        Nonetheless, existing benchmarks do not fully evaluate this potential. Current evaluations mainly focus on single-turn, static interactions between users and LLMs. While MT-bench attempts to consider multi-turn interactions with 80 examples, its reliance on predefined second queries fails to effectively examine the dynamic responses of different LLMs when engaging with users in complex, long-horizon simulation tasks. In addition, these benchmarks primarily concentrate on tasks related to general information retrieval and creative writing, with less emphasis on complex simulation abilities.
                     </p>
                     <p>
-                        In addition, these benchmarks primarily concentrate on tasks related to general information
-                        retrieval and creative writing, with less emphasis on complex simulation abilities. The existing
-                        role-playing benchmarks tend to focus on replicating the language styles of famous characters,
-                        an aspect that barely begins to explore the full range of simulation capabilities. This
-                        highlights the need for more comprehensive benchmarks that can thoroughly assess the
-                        wide-ranging simulation potential of LLMs.
+                        Based on whether the simulation target is a human or not, simulation tasks can be divided into two groups. The former groups correlate to existing role-playing benchmarks focusing on replicating the language styles and knowledge of famous characters or professions and have been widely investigated. However, the second group of tasks are under consideration. Recent work from Duan et al. introducing GTBench to explore LLM’s ability on some language-driven games, is barely beginning to explore this kind of simulation abilities. A comprehensive benchmark covering wide-ranging non-human centered tasks for thoroughly assessing the simulation potential of LLMs is in urgent need.
                     </p>
                 </div>
             </div>
@@ -320,12 +295,7 @@
                 <h2 class="title is-3">Tasks for SimulBench</h2>
                 <div class="content has-text-justified">
                     <p>
-                        We have gathered 168 distinct simulation tasks that require ChatGPT to perform in a variety of
-                        roles. These roles include acting as a Linux terminal, an SQL executor, a player for text-based
-                        games such as tic-tac-toe, an interviewer for specific roles such as a software developer, a
-                        personal investment manager, a generator for passwords with particular constraints, an ASCII art
-                        creator, a predictor of chemical reactions, and more. Each task specification comes with a role
-                        description, some output requirements and an initial user request. </p>
+                        We have gathered 109 distinct simulation tasks that require LLMs to perform in a variety of interfaces. These interfaces include acting as a Linux terminal, an SQL executor, text-based games such as tic-tac-toe, a generator for passwords with particular constraints, an ASCII art creator, a predictor of chemical reactions, and more. Each task specification comes with an interface description, some output requirements and an initial user request.  </p>
                     <p>
                         <!--        <div class="content has-text-centered">-->
                         <!--          <img src="static/images/figure3.jpg" alt="algebraic reasoning" class="center">-->
@@ -340,17 +310,10 @@
         <div class="columns is-centered has-text-centered">
             <!-- <div class="column is-full-width has-text-centered"> -->
             <div class="column is-four-fifths">
-                <h2 class="title is-3">Dynamic Multi-Turn Evaluation</h2>
+                <h2 class="title is-3">Multi-Turn Script-Based Evaluation</h2>
                 <div class="content has-text-justified">
                     <p>
-                        MT-bench is designed to test Language Models (LLMs) in a two-turn conversation, where the second
-                        turn is predefined. However, our SimulBench necessitates multiple turns between users and LLMs.
-                        Depending on the task types and context window limit, some tasks may involve conversations
-                        exceeding 5 turns, with the majority spanning over 2 turns. To replicate realistic usage
-                        scenarios of LLMs, we employ OpenAI's GPT-3.5 to simulate a user interacting continuously with
-                        the LLMs under evaluation. After gathering the dialogues between the user agent and each target
-                        LLM, we follow the methodology of previous studies, using GPT-4 to assess and rate the quality
-                        of these conversations.
+                        MT-bench is designed to test LLMs in a two-turn conversation, where the second turn is predefined. However, our necessitates multiple turns between users and LLMs. Depending on the task types and context window limit, some tasks may involve conversations exceeding 5 turns, with the majority spanning over 2 turns. To replicate realistic usage scenarios of LLMs, we employ OpenAI's GPT-3.5 to simulate a user interacting continuously with an LLM. To ensure fairness among different test models, we extract challenging histories from the collected dialogues to form the final test scripts. Finally, after gathering reactions from each target LLM, we follow the methodology of previous studies, using GPT-4 to assess and rate the quality of these responses. We also conduct pairwise comparisons for a more detailed analysis. 
                     <p>
                 </div>
             </div>
@@ -364,21 +327,9 @@
                 <h2 class="title is-3">Experimental Results and Findings</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Our study involved an analysis of four widely used open Language Learning Models (LLMs),
-                        specifically Llama-2-chat (7B/13B/70B) and Mixtral (8x7B). These models are often ranked highly
-                        on several existing leaderboards, such as the Chatbot Arena. Our findings revealed a substantial
-                        performance gap between these open-source LLMs and GPT-4-turbo. Even the largest open LLM,
-                        Llama-2-70b-chat, was surpassed by GPT-4 turbo by a margin of 37.95\% on the hard subset of
-                        SimulBench.
+                        Our study involved an analysis of 2 proprietary LLMs and 12 widely used open-source LLMs, specifically series of models in LLaMA, Qwen and Mixtral. These models are often ranked highly on several existing leaderboards, such as the Chatbot Arena. Although the performance of these open-source LLMs is approaching GPT-4-turbo, there is still a conspicuous gap between them. Even the strongest open LLM, LLaMA-3-70B-Chat, was surpassed by GPT-4-turbo on 18.55% more cases on the hard subset of SimulBench.
                     <p>
-                        We also observed that LLMs, including GPT-4-turbo, tend to exhibit poorer performance in
-                        simulation tasks that necessitate objective outputs. For instance, GPT-4-turbo's performance on
-                        simulation tasks of simple but useful objective tools, such as generating a random password with
-                        requirements for characters, scored only 8.20, conspicuously dropped from 9.23 of the subjective
-                        ones. In addition, we noticed a significant decrease in LLMs' performance when simulation tasks
-                        demand long-horizon memory, complex reasoning, and compositional instructions, especially for
-                        open LLMs. Mixtral achieved 9.07 on general role-playing tasks, but only 7.43 in simulation
-                        tasks that required a self-contained system (such as a Linux terminal).
+                        We noticed that recent LLMs can take advantage of history information much better than the previous ones, showing superior performance on stateful tasks than the stateless ones. However, we also highlighted the importance of utilizing the context information cautiously and selectively, and showed that even the performance of GPT-4o drops from 9.40 to 7.57 on the most challenging scripts possibly containing erroneous dialogue history. In addition, we observed that although LLMs are knowledgeable and good at question answering, they face obstacles to applying knowledge flexibly and tend to exhibit poorer performance in simulation tasks that necessitate more rigorous outputs (such as classical encryption algorithms) and strategic plans along with long-horizon memory (such as different board games).
                     <div>
                     </div>
                 </div>
@@ -415,30 +366,22 @@
                             Based on the nature of the output information, we have bifurcated the tasks into two
                             distinct categories:
                         <ul>
-                            <li>Objective: This category includes 90 tasks that involve information which can be
-                                fact-checked or verified according to set rules and facts;
+                            <li>Stateless: This category refers to a simulation task which is a one-time call tool that accepts a user request as input and returns the output by following the underlying mechanism or rules of the task, such as password generation and song recommender.
                             </li>
-                            <li>Subjective: This category, on the other hand, comprises 78 tasks that primarily focus on
-                                feelings, opinions, or emotions.
+                            <li>Stateful: This category refers to the tasks that have a real underlying environment or state that evolves as the user's request is processed at each turn, such as the Linux terminal and Tic-Tac-Toe games.
                             </li>
                         </ul>
                         <p>
-                            We categorize the simulation tasks into three distinct types based on their targets:
+                            We also categorize the evaluation script into three distinct types based on the extraction strategy:
                         <ul>
-                            <li>System: In 21 instances, the task requires simulating a real or game-based system,
-                                platform, or environment, among others;
+                            <li>LastOnly: refers to 225 scripts extracted by the first strategy and not considered by the second strategy;
                             </li>
-                            <li>Tool: In 38 instances, the task is to simulate practical tools;</li>
-                            <li>Role: In 109 instances, the task involves impersonating a real person, a specific
-                                profession, or a fictional character.
+                            <li>FirstChan: has 93 scripts from the second strategy while only considering the first recognized challenging turn;</li>
+                            <li>SubseqChan: contains 182 scripts with subsequent challenging turns after the first one.
                             </li>
                         </ul>
                         <p>
-                            We also further filtered out a challenging subset of SimulBench, indicated by their lower
-                            scores and a notable gap between the proprietary model and open-source models.
-                        <p>
-                            Overall, we found that LLMs struggle with objective simulations and struggle to accurately
-                            simulate systems and tools.
+                            We regard test scripts from FirstChan and SubseqChan as a more challenging subset, named SimulBench-Hard.
                         </p>
                     </div>
                 </div>
@@ -472,71 +415,141 @@
                             <thead>
                             <tr>
                                 <th style="text-align: center; vertical-align: middle;" rowspan="2">Model</th>
-                                <th colspan="2">Information Property</th>
-                                <th colspan="3">Simulation Target</th>
-                                <th style="text-align: center; vertical-align: middle;" rowspan="2">All</th>
+                                <th colspan="2">Simulation Type</th>
+                                <th colspan="3">Script Type</th>
                                 <th style="text-align: center; vertical-align: middle;" rowspan="2">Hard</th>
+                                <th style="text-align: center; vertical-align: middle;" rowspan="2">All</th>
                             </tr>
                             <tr>
-                                <th>Objective</th>
-                                <th>Subjective</th>
-                                <th>System</th>
-                                <th>Tool</th>
-                                <th>Role</th>
+                                <th>Stateless</th>
+                                <th>Stateful</th>
+                                <th>LastOnly</th>
+                                <th>FirstChan</th>
+                                <th>SubseqChan</th>
                             </tr>
                             </thead>
                             <tbody>
                             <!--                <tr style="background-color: #ffffcc;">-->
-                            <td style="text-align: left;">GPT-4 Turbo</td>
-                            <td>8.89</td>
-                            <td>9.21</td>
-                            <td>8.90</td>
-                            <td>8.55</td>
-                            <td>9.23</td>
-                            <td>9.04</td>
-                            <td>8.47</td>
-                            </tr>
-
-                            <td style="text-align: left;">Mixtral</td>
-                            <td>7.69</td>
-                            <td>9.00</td>
-                            <td>6.81</td>
-                            <td>7.84</td>
+                            <td style="text-align: left;">gpt-4-0125-preview</td>
+                            <td>8.45</td>
                             <td>8.75</td>
-                            <td>8.30</td>
-                            <td>6.14</td>
-                            </tr>
-
-                            <td style="text-align: left;">Llama-2-70B-chat</td>
-                            <td>7.69</td>
-                            <td>9.00</td>
-                            <td>6.81</td>
-                            <td>7.84</td>
-                            <td>8.75</td>
-                            <td>8.30</td>
-                            <td>6.14</td>
-                            </tr>
-
-                            <td style="text-align: left;">Llama-2-13B-chat</td>
-                            <td>7.37</td>
-                            <td>8.93</td>
-                            <td>5.48</td>
-                            <td>7.24</td>
-                            <td>8.89</td>
-                            <td>8.09</td>
-                            <td>4.93</td>
-                            </tr>
-
-                            <td style="text-align: left;">Llama-2-7B-chat</td>
-                            <td>7.38</td>
-                            <td>8.87</td>
-                            <td>6.29</td>
-                            <td>7.13</td>
+                            <td>9.29</td>
+                            <td>8.62</td>
+                            <td>8.13</td>
+                            <td>8.29</td>
                             <td>8.74</td>
-                            <td>8.07</td>
-                            <td>5.00</td>
                             </tr>
 
+                            <td style="text-align: left;">LLaMA-3-70B-Chat</td>
+                            <td>7.74</td>
+                            <td>8.40</td>
+                            <td>9.32</td>
+                            <td>8.13</td>
+                            <td>7.98</td>
+                            <td>8.03</td>
+                            <td>8.61</td>
+                            </tr>
+
+                            <td style="text-align: left;">gpt-4o-2024-05-13</td>
+                            <td>8.55</td>
+                            <td>8.72</td>
+                            <td>9.40</td>
+                            <td>8.65</td>
+                            <td>7.57</td>
+                            <td>7.93</td>
+                            <td>8.59</td>
+                            </tr>
+
+                            <td style="text-align: left;">Qwen1.5-110B-Chat</td>
+                            <td>7.92</td>
+                            <td>8.48</td>
+                            <td>9.16</td>
+                            <td>8.25</td>
+                            <td>7.25</td>
+                            <td>7.59</td>
+                            <td>8.30</td>
+                            </tr>
+
+                            <td style="text-align: left;">Mixtral-8x22B-Instruct-v0.1</td>
+                            <td>7.75</td>
+                            <td>7.53</td>
+                            <td>8.99</td>
+                            <td>7.62</td>
+                            <td>6.83</td>
+                            <td>7.10</td>
+                            <td>7.95</td>
+                            </tr>
+
+                            <td style="text-align: left;">Qwen1.5-7B-Chat</td>
+                            <td>6.71</td>
+                            <td>6.40</td>
+                            <td>8.73</td>
+                            <td>6.53</td>
+                            <td>6.60</td>
+                            <td>6.58</td>
+                            <td>7.55</td>
+                            </tr>
+
+                            <td style="text-align: left;">Mixtral-8x7B-Instruct-v0.1</td>
+                            <td>6.79</td>
+                            <td>6.98</td>
+                            <td>8.39</td>
+                            <td>6.90</td>
+                            <td>6.76</td>
+                            <td>6.81</td>
+                            <td>7.52</td>
+                            </tr>
+
+                            <td style="text-align: left;">LLaMA-2-70B-Chat</td>
+                            <td>6.55</td>
+                            <td>6.40</td>
+                            <td>8.59</td>
+                            <td>6.46</td>
+                            <td>6.40</td>
+                            <td>6.42</td>
+                            <td>7.40</td>
+                            </tr>
+
+                            
+                            <td style="text-align: left;">Mistral-7B-Instruct-v0.3</td>
+                            <td>6.76</td>
+                            <td>6.16</td>
+                            <td>8.37</td>
+                            <td>6.41</td>
+                            <td>6.14</td>
+                            <td>6.23</td>
+                            <td>7.19</td>
+                            </tr>
+
+                            <td style="text-align: left;">LLaMA-2-13B-Chat</td>
+                            <td>6.00</td>
+                            <td>5.74</td>
+                            <td>8.48</td>
+                            <td>5.84</td>
+                            <td>6.11</td>
+                            <td>6.02</td>
+                            <td>7.13</td>
+                            </tr>
+
+                            <td style="text-align: left;">LLaMA-3-8B-Chat</td>
+                            <td>6.76</td>
+                            <td>7.64</td>
+                            <td>9.03</td>
+                            <td>7.28</td>
+                            <td>7.20</td>
+                            <td>7.23</td>
+                            <td>8.04</td>
+                            </tr>
+
+                            <td style="text-align: left;">LLaMA-2-7B-Chat</td>
+                            <td>5.29</td>
+                            <td>5.58</td>
+                            <td>8.37</td>
+                            <td>5.46</td>
+                            <td>6.09</td>
+                            <td>5.88</td>
+                            <td>7.00</td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
